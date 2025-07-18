@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Botones con redirección</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #000;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 35px; /* Más espacio entre los botones */
+    }
+
+    button {
+      padding: 20px 60px; /* Botones más grandes */
+      font-size: 20px;     /* Texto más grande */
+      border: none;
+      border-radius: 12px;
+      background-color: #ffffff;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      box-shadow: 0 0 14px 4px #7fffd4;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="button-group">
+    <button onclick="window.location.href='Linea1zG.html'">Linea 1</button>
+    <button onclick="window.location.href='Linea2zG.html'">Linea 2</button>
+    <button onclick="window.location.href='Linea3zG.html'">Linea 3</button>
+    <button onclick="window.location.href='Linea4zG.html'">Linea 4</button>
+    <!-- Nuevo botón para regresar al menú principal -->
+    <button onclick="window.location.href='index.html'">Regresar al Menú Principal</button>
+  </div>
+</body>
+</html>
+
