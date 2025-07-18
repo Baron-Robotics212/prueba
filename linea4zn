@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Línea 1</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #000;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            padding: 0 15px; /* Espaciado para evitar que los botones toquen los bordes en móviles */
+        }
+
+        .button-group {
+            display: flex;
+            justify-content: space-between; /* Distribuir los botones entre las dos columnas */
+            flex-wrap: wrap; /* Asegura que los botones no se desborden */
+            gap: 20px; /* Espacio entre los botones */
+            width: 100%;
+            max-width: 900px; /* Limita el ancho de los botones */
+        }
+
+        .button-column {
+            display: flex;
+            flex-direction: column; /* Acomoda los botones en columna */
+            gap: 20px;
+            width: 45%; /* Cada columna ocupa el 45% del ancho */
+        }
+
+        button {
+            padding: 20px 60px;
+            font-size: 20px;
+            border: none;
+            border-radius: 12px;
+            background-color: #ffffff;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%; /* Los botones ocupan el 100% del ancho de la columna */
+            box-sizing: border-box; /* Para que el padding no afecte el tamaño total */
+        }
+
+        button:hover {
+            box-shadow: 0 0 14px 4px #7fffd4;
+            background-color: #f0f0f0;
+        }
+
+        /* Estilos para móviles */
+        @media (max-width: 600px) {
+            .button-group {
+                flex-direction: column; /* Los botones se apilan verticalmente en pantallas pequeñas */
+                align-items: center; /* Alineamos los botones al centro */
+            }
+
+            .button-column {
+                width: 100%; /* Las columnas ocupan el 100% en pantallas pequeñas */
+                align-items: center;
+            }
+
+            button {
+                width: 80%; /* Los botones ocupan el 80% del ancho en pantallas pequeñas */
+                margin: 10px 0; /* Agregamos un poco de espacio entre los botones */
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="button-group">
+        <!-- Columna 1: 5 botones a la izquierda -->
+        <div class="button-column">
+            <button onclick="window.location.href='pagina1.html'">Sacheteadora</button>
+        </div>
+
+        <!-- Columna 2: 5 botones a la derecha -->
+        <div class="button-column">
+            <button onclick="window.location.href='index.html'">Regresar al Menú Principal</button>
+        </div>
+    </div>
+</body>
+</html>
