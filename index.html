@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Botones Centrados</title>
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    }
+
+    .centered-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+    }
+
+    .button-link {
+      display: inline-block;
+      text-align: center;
+      padding: 20px 60px;
+      font-size: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 12px;
+      background-color: #ffffff;
+      color: #333;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .button-link:hover {
+      box-shadow: 0 0 14px 4px #7fffd4;
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <div class="centered-container">
+    <div class="button-group">
+      <a href="zona-negra.html" class="button-link">Zona negra</a>
+      <a href="zona-gris.html" class="button-link">Zona gris</a>
+      <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=Y7DJjFzXPUOA0JEsfAAuCx3Bfq2G6jJEs0qzaQroH3VUOFRYWlVHTEFFTFdGRDM5SVRJM1NEMlkwVS4u" class="button-link">Montar aviso</a>
+    </div>
+  </div>
+</body>
+</html>
