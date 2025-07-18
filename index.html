@@ -16,19 +16,23 @@
       justify-content: center;
       align-items: center;
       height: 100%;
+      padding: 20px;
     }
 
     .button-group {
       display: flex;
       flex-direction: column;
-      gap: 45px; /* más espacio entre los botones */
+      gap: 45px;
+      align-items: center;
+      width: 100%;
+      max-width: 500px;
     }
 
     .button-link {
       display: inline-block;
       text-align: center;
-      padding: 30px 80px; /* botón más grande */
-      font-size: 24px; /* texto más grande */
+      padding: 30px 80px;
+      font-size: 24px;
       cursor: pointer;
       border: none;
       border-radius: 14px;
@@ -37,11 +41,21 @@
       text-decoration: none;
       transition: all 0.3s ease;
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+      width: auto;
     }
 
     .button-link:hover {
       box-shadow: 0 0 18px 6px #7fffd4;
       background-color: #f0f0f0;
+    }
+
+    /* Estilos para móviles */
+    @media (max-width: 600px) {
+      .button-link {
+        width: 100%;
+        font-size: 28px;
+        padding: 40px 20px;
+      }
     }
   </style>
 </head>
