@@ -2,29 +2,109 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Botones Centrados</title>
+  <title>Imagen con Efecto Hover</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
-    body, html {
-      height: 100%;
+    body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      padding: 0;
       background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
-    }
-
-    .centered-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100%;
-      padding: 20px;
-    }
-
-    .button-group {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .imagen-con-boton {
+      position: relative;
+      margin-top: 20px;
+      width: 90%;
+      max-width: 600px;
+      border-radius: 20px;
+      padding: 6px; /* espacio para el borde animado */
+      background: linear-gradient(270deg, #00cfff, #7fffd4, #00cfff);
+      background-size: 600% 600%;
+      animation: gradienteAnim 8s ease infinite;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      cursor: pointer;
+      transition: box-shadow 0.4s ease;
+    }
+
+    .imagen-con-boton:hover {
+      box-shadow: 0 10px 25px rgba(0, 255, 255, 0.5);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .imagen-con-boton img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 14px;
+      display: block;
+      /* para evitar que la imagen sobresalga del borde */
+      box-shadow: inset 0 0 15px rgba(255,255,255,0.1);
+      transition: transform 0.3s ease;
+    }
+
+    @keyframes gradienteAnim {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    .boton-transparente {
+      position: absolute;
+      padding: 8px 22px;
+      font-size: 25px;
+      background-color: transparent;
+      color: white;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: box-shadow 0.2s ease, background-color 0.2s ease;
+      user-select: none;
+    }
+
+    .boton-transparente:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 10px 2px grey;
+    }
+
+    .boton-transparente:active {
+      box-shadow: 0 0 10px 2px #00cfff;
+    }
+
+    .boton-gris {
+      color: #555;
+    }
+
+    .titulo-zona {
+      position: absolute;
+      top: 5px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 36px;
+      color: black;
+      text-shadow: 1px 1px 5px black;
+      z-index: 10;
+      user-select: none;
+    }
+
+    /* Estilo del botón de regreso igual que el otro ejemplo */
+    .button-container {
       width: 100%;
       max-width: 450px;
+      padding: 30px 20px;
     }
 
     .button-link {
@@ -48,7 +128,6 @@
       background-color: #f0f0f0;
     }
 
-    /* Estilos para móviles */
     @media (max-width: 600px) {
       .button-link {
         font-size: 30px;
@@ -58,17 +137,52 @@
   </style>
 </head>
 <body>
-  <div class="centered-container">
-    <div class="button-group">
-      <a href="Linea1zn.html" class="button-link">Línea 1</a>
-      <a href="Linea2zn.html" class="button-link">Línea 2</a>
-      <a href="Linea3zn.html" class="button-link">Línea 3</a>
-      <a href="Linea4zn.html" class="button-link">Línea 4</a>
-      <a href="Linea5zn.html" class="button-link">Línea 5</a>
-      <a href="index.html" class="button-link">Regresar al Menú Principal</a>
-    </div>
+
+  <div class="imagen-con-boton">
+    <!-- Título centrado -->
+    <p class="titulo-zona">Zona Negra</p>
+
+    <!-- Imagen -->
+    <img src="https://drive.google.com/file/d/1gsCRHT3y3Di_iCcIGgq7HYl2rhVnjaxp/view?usp=sharing" alt="Imagen de ejemplo" />
+
+    <!-- Botones sobre la imagen -->
+    <a href="Linea1zn.html">
+      <button class="boton-transparente boton-gris" style="top: 665px; left: 402px;">Línea 1</button>
+    </a>
+
+    <a href="Linea2zn.html">
+      <button class="boton-transparente boton-gris" style="top: 505px; left: 402px;">Línea 2</button>
+    </a>
+
+    <a href="Linea3zn.html">
+      <button class="boton-transparente boton-gris" style="top: 340px; left: 402px;">Línea 3</button>
+    </a>
+
+    <a href="hLinea4zn.html">
+      <button class="boton-transparente boton-gris" style="top: 210px; left: 402px;">Línea 4</button>
+    </a>
+
+    <a href="Linea5zn.html">
+      <button class="boton-transparente boton-gris" style="top: 112px; left: 402px;">Línea 5</button>
+    </a>
+
+    <a href="x">
+      <button class="boton-transparente boton-gris" style="top: 485px; left: 16px;">Banda espiral</button>
+    </a>
+
+    <a href="x">
+      <button class="boton-transparente boton-gris" style="top: 600px; left: 24px;">Hércules</button>
+    </a>
+
+    <a href="x">
+      <button class="boton-transparente boton-gris" style="top: 350px; left: 24px;">Estibadores</button>
+    </a>
   </div>
+
+  <!-- Botón de regreso al menú con el nuevo estilo -->
+  <div class="button-container">
+    <a href="index.html" class="button-link">Regresar al Menú Principal</a>
+  </div>
+
 </body>
 </html>
-
-
