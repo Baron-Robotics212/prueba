@@ -1,120 +1,88 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Línea 1zG</title>
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claves</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #000;
+            color: white;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-      padding: 20px;
-    }
+        h1 {
+            margin-bottom: 40px;
+            font-size: 36px;
+            color: #7fffd4;
+            text-align: center;
+        }
 
-    .button-group {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      width: 100%;
-      max-width: 1000px;
-      justify-content: space-between;
-    }
+        .card {
+            background-color: #1a1a1a;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 30px;
+            width: 100%;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(127, 255, 212, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: default; /* ← No parece clickeable */
+        }
 
-    .card {
-      background-color: #1a1a1a;
-      border-radius: 12px;
-      padding: 20px;
-      width: 48%;
-      box-shadow: 0 0 10px rgba(127, 255, 212, 0.2);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-    }
+        .card:hover {
+            transform: scale(1.03); /* ← Zoom */
+            box-shadow: 0 0 20px rgba(127, 255, 212, 0.6); /* ← Iluminación */
+        }
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 20px rgba(127, 255, 212, 0.6);
-    }
+        .card h2 {
+            margin-top: 0;
+            color: #7fffd4;
+        }
 
-    .card-title {
-      font-size: 22px;
-      color: #7fffd4;
-      margin-bottom: 10px;
-    }
+        .card p {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
 
-    .card-description {
-      font-size: 16px;
-      color: #ccc;
-      margin: 0;
-    }
-
-    @media (max-width: 600px) {
-      .button-group {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .card {
-        width: 100%;
-      }
-    }
-  </style>
+        @media (max-width: 600px) {
+            .card {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="button-group">
+    <h1>Claves Didácticas</h1>
 
-    <!-- Tarjetas columna 1 -->
-    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1ZJErLPbfN4SBAAKNlysjGyGeM-MSApqn/view?usp=sharing'">
-      <div class="card-title">Etiquetadora universal</div>
-      <p class="card-description">Equipo para colocar etiquetas automáticamente sobre los envases. Alta precisión y velocidad.</p>
+    <div class="card">
+        <h2>Encelofanadora SX60</h2>
+        <p>Usuario: ######</p>
+        <p>Contraseña: ######</p>
     </div>
 
-    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1FWiD_i34AfT1ZBY5-XroQG-Kwto-Pwsv/view?usp=sharing'">
-      <div class="card-title">Transportador Depucker #2</div>
-      <p class="card-description">Sistema de transporte para el movimiento fluido de frascos después del desempacado.</p>
+    <div class="card">
+        <h2>Título 2</h2>
+        <p>Primer párrafo del contenido relacionado con el Título 2. Puedes incluir instrucciones, descripciones o notas clave.</p>
+        <p>Segundo párrafo con recomendaciones, advertencias o aclaraciones adicionales para reforzar el mensaje.</p>
     </div>
 
-    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1k7ju0XiQLYjxN57W5ni5Q_Qt0SGpk5Ty/view?usp=sharing'">
-      <div class="card-title">Etiquetadora Label Star</div>
-      <p class="card-description">Máquina especializada en aplicar etiquetas envolventes con gran eficiencia.</p>
+    <div class="card">
+        <h2>Título 3</h2>
+        <p>Primer párrafo enfocado en otro tema esencial. Puede estar relacionado con procedimientos, seguridad o funcionamiento técnico.</p>
+        <p>Segundo párrafo con datos complementarios o recordatorios importantes.</p>
     </div>
 
-    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1t8jacQ-GTVW2J-gChHII6vi-zFL5lwUX/view?usp=sharing'">
-      <div class="card-title">Tapadora PKB</div>
-      <p class="card-description">Equipo encargado de colocar tapas de forma automática con torque controlado.</p>
+    <div class="card">
+        <h2>Título 4</h2>
+        <p>Contenido introductorio o explicativo que guíe al lector sobre un aspecto específico del trabajo o herramienta.</p>
+        <p>Desarrollo adicional con énfasis en la comprensión clara y directa del tema.</p>
     </div>
-
-    <!-- Tarjetas columna 2 -->
-    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1QXrgh2a6vhWEy7V6wByEtNVf1KPlYjhN/view?usp=sharing'">
-      <div class="card-title">Envasadora automática PKB</div>
-      <p class="card-description">Máquina que dosifica el producto en frascos con alta precisión y velocidad.</p>
-    </div>
-
-    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/13JMYcfKEblmGmNoi4swOIB-SqBore3Oi/view?usp=sharing'">
-      <div class="card-title">Banda abast frascos CH1</div>
-      <p class="card-description">Cinta transportadora encargada de abastecer frascos hacia la línea de llenado.</p>
-    </div>
-
-    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1VoVMlVMlmtTjjtImUDUBcuJxklXK38iI/view?usp=sharing'">
-      <div class="card-title">Transportadora de nidos PKB</div>
-      <p class="card-description">Equipo que organiza y transporta los frascos desde la estación inicial.</p>
-    </div>
-
-    <div class="card" onclick="window.location.href='index.html'">
-      <div class="card-title">Regresar al Menú Principal</div>
-      <p class="card-description">Haz clic aquí para volver a la pantalla principal y explorar otras líneas.</p>
-    </div>
-
-  </div>
 </body>
 </html>
