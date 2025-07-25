@@ -22,7 +22,7 @@
       width: 90%;
       max-width: 600px;
       border-radius: 20px;
-      padding: 6px; /* espacio para el borde animado */
+      padding: 6px;
       background: linear-gradient(270deg, #00cfff, #7fffd4, #00cfff);
       background-size: 600% 600%;
       animation: gradienteAnim 8s ease infinite;
@@ -43,22 +43,14 @@
       width: 100%;
       height: auto;
       border-radius: 14px;
-      display: block;
-      /* para evitar que la imagen sobresalga del borde */
       box-shadow: inset 0 0 15px rgba(255,255,255,0.1);
       transition: transform 0.3s ease;
     }
 
     @keyframes gradienteAnim {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .boton-transparente {
@@ -100,7 +92,6 @@
       user-select: none;
     }
 
-    /* Estilo del botón de regreso igual que el otro ejemplo */
     .button-container {
       width: 100%;
       max-width: 450px;
@@ -139,47 +130,41 @@
 <body>
 
   <div class="imagen-con-boton">
-    <!-- Título centrado -->
     <p class="titulo-zona">Zona Negra</p>
 
-    <!-- Imagen -->
-    <img src="https://github.com/Baron-Robotics212/prueba/commit/57e2e5b71cf765d54e9d79e149e6598517e32385#diff-e70cab46a194733c0ae75894994030f3429c53d1988a5ef1f998f1ae76f0e37e" alt="Imagen de ejemplo" />
+    <img src="D:\OneDrive - UNIQUEYANBAL\Escritorio\PLANER S.B\plano-negro.png" alt="Imagen de ejemplo" />
 
-    <!-- Botones sobre la imagen -->
+    <!-- Botones -->
     <a href="Linea1zn.html">
       <button class="boton-transparente boton-gris" style="top: 665px; left: 402px;">Línea 1</button>
     </a>
-
     <a href="Linea2zn.html">
       <button class="boton-transparente boton-gris" style="top: 505px; left: 402px;">Línea 2</button>
     </a>
-
     <a href="Linea3zn.html">
       <button class="boton-transparente boton-gris" style="top: 340px; left: 402px;">Línea 3</button>
     </a>
-
     <a href="Linea4zn.html">
       <button class="boton-transparente boton-gris" style="top: 210px; left: 402px;">Línea 4</button>
     </a>
-
     <a href="Linea5zn.html">
       <button class="boton-transparente boton-gris" style="top: 112px; left: 402px;">Línea 5</button>
     </a>
-
-    <a href='https://drive.google.com/file/d/15g-i5gs1UweSrDGLWqCUg3P0rShWY_do/view?usp=sharing'>
+    <a href="https://drive.google.com/file/d/15g-i5gs1UweSrDGLWqCUg3P0rShWY_do/view?usp=sharing">
       <button class="boton-transparente boton-gris" style="top: 485px; left: 16px;">Banda espiral</button>
     </a>
-
     <a href="x">
       <button class="boton-transparente boton-gris" style="top: 600px; left: 24px;">Hércules</button>
     </a>
-
     <a href="x">
       <button class="boton-transparente boton-gris" style="top: 350px; left: 24px;">Estibadores</button>
     </a>
+
+    <a href="https://drive.google.com/file/d/1wTekxVDdgBibF7hi1wWfTrrh4w_6X2Md/view?usp=sharing">
+      <button class="boton-transparente boton-gris" style="top: 250px; left: 24px;">    Video Jet</button>
+    </a>
   </div>
 
-  <!-- Botón de regreso al menú con el nuevo estilo -->
   <div class="button-container">
     <a href="index.html" class="button-link">Regresar al Menú Principal</a>
   </div>
