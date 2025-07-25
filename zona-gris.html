@@ -29,23 +29,13 @@
       animation: gradienteAnim 8s ease infinite;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
       overflow: hidden;
-      cursor: pointer;
-      transition: box-shadow 0.4s ease;
-    }
-
-    .imagen-con-boton:hover {
-      box-shadow: 0 10px 25px rgba(0, 255, 255, 0.5);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
     }
 
     .imagen-con-boton img {
-      display: block;
       width: 100%;
       height: auto;
       border-radius: 14px;
-      box-shadow: inset 0 0 15px rgba(255,255,255,0.1);
-      transition: transform 0.3s ease;
+      display: block;
     }
 
     @keyframes gradienteAnim {
@@ -54,44 +44,53 @@
       100% { background-position: 0% 50%; }
     }
 
-  .boton-transparente {
-  position: absolute;
-  padding: 8px 22px;
-  font-size: 25px;
-  background-color: transparent; /* mantiene transparencia */
-  color: #333; /* texto más oscuro */
-  border: 1px solid #444; /* borde más oscuro */
-  border-radius: 5px;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: box-shadow 0.2s ease, background-color 0.2s ease;
-  user-select: none;
-}
-
-.boton-transparente:hover {
-  background-color: rgba(255, 255, 255, 0.05); /* leve cambio al hacer hover */
-  box-shadow: 0 0 12px 1px rgba(80, 80, 80, 0.4);
-}
-
-.boton-transparente:active {
-  box-shadow: 0 0 8px 1px #444;
-}
-
-.boton-gris {
-  color: #333; /* texto aún más oscuro */
-}
-
     .titulo-zona {
       position: absolute;
-      top: 5px;
+      top: 2%;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 36px;
+      font-size: 2em;
       color: black;
       text-shadow: 1px 1px 5px black;
       z-index: 10;
       user-select: none;
     }
+
+    .boton-transparente {
+      position: absolute;
+      padding: 8px 22px;
+      font-size: 1em;
+      background-color: transparent;
+      color: #333;
+      border: 1px solid #444;
+      border-radius: 5px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: box-shadow 0.2s ease, background-color 0.2s ease;
+    }
+
+    .boton-transparente:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+      box-shadow: 0 0 12px 1px rgba(80, 80, 80, 0.4);
+    }
+
+    .boton-transparente:active {
+      box-shadow: 0 0 8px 1px #444;
+    }
+
+    .boton-gris {
+      color: #333;
+    }
+
+    /* Posiciones relativas con porcentaje */
+    .linea1 { top: 80%; left: 12%; }
+    .linea2 { top: 53%; left: 12%; }
+    .linea3 { top: 32%; left: 12%; }
+    .linea4 { top: 5%; left: 12%; }
+
+    .banda       { top: 58%; left: 55%; }
+    .estibadores { top: 16%; left: 55%; }
+    .videojet    { top: 36%; left: 55%; }
 
     .button-container {
       width: 100%;
@@ -103,7 +102,7 @@
       display: inline-block;
       text-align: center;
       padding: 12px 30px;
-      font-size: 20px;
+      font-size: 1.2em;
       border: none;
       border-radius: 12px;
       background-color: #ffffff;
@@ -121,9 +120,18 @@
     }
 
     @media (max-width: 600px) {
+      .boton-transparente {
+        font-size: 1.3em;
+        padding: 10px 20px;
+      }
+
+      .titulo-zona {
+        font-size: 1.6em;
+      }
+
       .button-link {
-        font-size: 30px;
-        padding: 25px 20px;
+        font-size: 1.4em;
+        padding: 20px;
       }
     }
   </style>
@@ -132,37 +140,20 @@
 
   <div class="imagen-con-boton">
     <p class="titulo-zona">Zona Gris</p>
-
     <img src="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/plano-gris.png" alt="Plano gris" />
 
-    <!-- Botones -->
-    <a href="Linea1zG.html">
-      <button class="boton-transparente boton-gris" style="top: 575px; left: 70px;">Línea 1</button>
-    </a>
-
-    <a href="Linea2zG.html">
-      <button class="boton-transparente boton-gris" style="top: 380px; left: 70px;">Línea 2</button>
-    </a>
-
-    <a href="Linea3zG.html">
-      <button class="boton-transparente boton-gris" style="top: 230px; left: 70px;">Línea 3</button>
-    </a>
-
-    <a href="Linea4zG.html">
-      <button class="boton-transparente boton-gris" style="top: 27px; left: 70px;">Línea 4</button>
-    </a>
-
+    <!-- Botones con clases -->
+    <a href="Linea1zG.html"><button class="boton-transparente boton-gris linea1">Línea 1</button></a>
+    <a href="Linea2zG.html"><button class="boton-transparente boton-gris linea2">Línea 2</button></a>
+    <a href="Linea3zG.html"><button class="boton-transparente boton-gris linea3">Línea 3</button></a>
+    <a href="Linea4zG.html"><button class="boton-transparente boton-gris linea4">Línea 4</button></a>
 
     <a href="https://drive.google.com/file/d/15g-i5gs1UweSrDGLWqCUg3P0rShWY_do/view?usp=sharing">
-      <button class="boton-transparente boton-gris" style="top: 420px; left: 316px;">Banda espiral</button>
+      <button class="boton-transparente boton-gris banda">Banda espiral</button>
     </a>
-
-    <a href="x">
-      <button class="boton-transparente boton-gris" style="top: 120px; left: 316px;">Estibadores</button>
-    </a>
-
-<a href="https://drive.google.com/file/d/1wTekxVDdgBibF7hi1wWfTrrh4w_6X2Md/view?usp=sharing">
-      <button class="boton-transparente boton-gris" style="top: 270px; left: 316px;">Video Jet</button>
+    <a href="#"><button class="boton-transparente boton-gris estibadores">Estibadores</button></a>
+    <a href="https://drive.google.com/file/d/1wTekxVDdgBibF7hi1wWfTrrh4w_6X2Md/view?usp=sharing">
+      <button class="boton-transparente boton-gris videojet">Video Jet</button>
     </a>
   </div>
 
@@ -172,3 +163,4 @@
 
 </body>
 </html>
+
