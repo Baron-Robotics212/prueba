@@ -69,8 +69,25 @@
       <a href="zona-negra.html" class="button-link">Zona negra</a>
       <a href="zona-gris.html" class="button-link">Zona gris</a>
       <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=Y7DJjFzXPUOA0JEsfAAuCx3Bfq2G6jJEs0qzaQroH3VUOFRYWlVHTEFFTFdGRDM5SVRJM1NEMlkwVS4u" class="button-link">Montar aviso</a>
-      <a href="#" class="button-link">Claves</a>
+      <a href="#" class="button-link" onclick="pedirCredenciales()">Claves</a>
     </div>
   </div>
+
+  <script>
+    function pedirCredenciales() {
+      const usuario = prompt("Ingrese su usuario:");
+      const contraseña = prompt("Ingrese su contraseña:");
+
+      // Cambia estos valores según lo que necesites
+      const usuarioValido = "admin";
+      const contraseñaValida = "1234";
+
+      if (usuario === usuarioValido && contraseña === contraseñaValida) {
+        window.location.href = "claves.html";
+      } else {
+        alert("Credenciales incorrectas. Acceso denegado.");
+      }
+    }
+  </script>
 </body>
 </html>
