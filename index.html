@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
-  <title>Menu principal</title>
+  <title>Menú principal</title>
   <style>
     body, html {
       height: 100%;
@@ -33,19 +33,20 @@
       text-align: center;
       padding: 30px 80px;
       font-size: 50px;
-      border: none;
       border-radius: 14px;
       background-color: #ffffff;
       color: #333;
       text-decoration: none;
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
       width: 100%;
       box-sizing: border-box;
+      cursor: default; /* ← no parece un link común */
     }
 
     .button-link:hover {
-      box-shadow: 0 0 18px 6px #7fffd4;
+      transform: scale(1.03); /* Zoom */
+      box-shadow: 0 0 18px 6px #7fffd4; /* Iluminación */
       background-color: #f0f0f0;
     }
 
@@ -78,7 +79,6 @@
       const usuario = prompt("Ingrese su usuario:");
       const contraseña = prompt("Ingrese su contraseña:");
 
-      // Cambia estos valores según lo que necesites
       const usuarioValido = "admin";
       const contraseñaValida = "1234";
 
@@ -91,3 +91,4 @@
   </script>
 </body>
 </html>
+
