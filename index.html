@@ -13,13 +13,21 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background-color: #000;
+      background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #000000);
+      background-size: 400% 400%;
+      animation: fondoAnimado 15s ease infinite;
       color: white;
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
       padding: 20px;
+    }
+
+    @keyframes fondoAnimado {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .button-group {
@@ -32,11 +40,11 @@
     }
 
     .card {
-      background-color: #1a1a1a;
+      background-color: rgba(26, 26, 26, 0.9);
       border-radius: 12px;
       padding: 20px;
       width: 48%;
-      box-shadow: 0 0 10px rgba(127, 255, 212, 0.2);
+      box-shadow: 0 0 12px rgba(127, 255, 212, 0.2);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: pointer;
     }
@@ -97,7 +105,7 @@
 
     <div class="card" onclick="pedirCredenciales()">
       <div class="card-title">Claves</div>
-      <p class="card-description">Accede con credenciales para ver claves de configuración de las maquinas.</p>
+      <p class="card-description">Accede con credenciales para ver claves de configuración de las máquinas.</p>
     </div>
   </div>
 
