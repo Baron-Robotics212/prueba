@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <title>Zona Negra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />  
   <style>
     * {
       box-sizing: border-box;
@@ -75,7 +74,7 @@
       z-index: 10;
     }
 
-    /* Botones transparentes mejorados para mayor impacto */
+    /* Botones transparentes con brillo gris suave */
     .boton-transparente {
       position: absolute;
       padding: 8px 18px;
@@ -86,28 +85,25 @@
       border-radius: 7px;
       cursor: pointer;
       white-space: nowrap;
-      transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-      text-shadow: 0 0 3px rgba(68, 68, 68, 0.5);
-      filter: drop-shadow(0 0 1px rgba(0, 255, 255, 0.2));
+      transition: box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+      text-shadow: 0 0 2px rgba(68, 68, 68, 0.4);
       z-index: 5;
     }
 
     .boton-transparente:hover {
-      background-color: rgba(0, 207, 255, 0.15);
-      border-color: #00cfff;
-      color: #00cfff;
-      box-shadow: 0 0 12px 2px rgba(0, 207, 255, 0.6);
-      text-shadow: 0 0 8px #00cfff;
-      filter: drop-shadow(0 0 6px #00cfff);
+      background-color: rgba(200, 200, 200, 0.1);
+      border-color: #999;
+      color: #999;
+      box-shadow: 0 0 6px 1px rgba(180, 180, 180, 0.5);
+      text-shadow: 0 0 5px #bbb;
     }
 
     .boton-transparente:active {
-      box-shadow: 0 0 14px 3px #007f99;
-      background-color: rgba(0, 127, 153, 0.3);
-      border-color: #007f99;
-      color: #007f99;
-      text-shadow: 0 0 5px #007f99;
-      filter: drop-shadow(0 0 4px #007f99);
+      box-shadow: 0 0 8px 2px rgba(150, 150, 150, 0.7);
+      background-color: rgba(150, 150, 150, 0.15);
+      border-color: #bbb;
+      color: #bbb;
+      text-shadow: 0 0 4px #aaa;
     }
 
     .boton-gris {
@@ -116,16 +112,16 @@
     }
 
     /* Posiciones relativas usando porcentaje */
-    .linea1 { top: 76%; left: 67%; }
-    .linea2 { top: 58%; left: 67%; }
-    .linea3 { top: 43%; left: 67%; }
-    .linea4 { top: 26%; left: 67%; }
-    .linea5 { top: 15%; left: 67%; }
+    .linea1 { top: 73%; left: 64%; }
+    .linea2 { top: 58%; left: 64%; }
+    .linea3 { top: 40%; left: 64%; }
+    .linea4 { top: 29%; left: 64%; }
+    .linea5 { top: 15%; left: 64%; }
 
-    .banda { top: 57%; left: 5%; }
-    .hercules { top: 69%; left: 5%; }
-    .estibadores { top: 43%; left: 5%; }
-    .videojet { top: 30%; left: 5%; }
+    .videojet { top: 26%; left: 4%; }
+    .estibadores { top: 38%; left: 4%; }
+    .banda { top: 54%; left: 4%; }
+    .hercules { top: 65%; left: 4%; }
 
     /* Nuevo estilo para el contenedor del botón final */
     .button-container {
@@ -136,7 +132,7 @@
       justify-content: center;
     }
 
-    /* Estilo tipo "card" para el botón regresar (como en el segundo código) */
+    /* Estilo tipo "card" para el botón regresar */
     .button-link {
       background-color: rgba(15, 15, 15, 0.85);
       border-radius: 12px;
@@ -220,3 +216,4 @@
 
 </body>
 </html>
+
