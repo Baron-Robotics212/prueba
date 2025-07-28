@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Menú principal</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
   <style>
     * {
       box-sizing: border-box;
@@ -64,7 +65,15 @@
       }
 
       .card {
-        width: 100%;
+        width: 100% !important;
+      }
+
+      .card-title {
+        font-size: 20px;
+      }
+
+      .card-description {
+        font-size: 14px;
       }
     }
   </style>
@@ -88,7 +97,7 @@
 
     <div class="card" onclick="pedirCredenciales()">
       <div class="card-title">Claves</div>
-      <p class="card-description">Accede con credenciales para ver claves de configuración de las maquinas.</p>
+      <p class="card-description">Accede con credenciales para ver claves de configuración.</p>
     </div>
   </div>
 
@@ -97,8 +106,8 @@
       const usuario = prompt("Ingrese su usuario:");
       const contraseña = prompt("Ingrese su contraseña:");
 
-      const usuarioValido = "admin";
-      const contraseñaValida = "1234";
+      const usuarioValido = "YANBAL";
+      const contraseñaValida = "Mtto2025*";
 
       if (usuario === usuarioValido && contraseña === contraseñaValida) {
         window.location.href = "claves.html";
@@ -109,4 +118,3 @@
   </script>
 </body>
 </html>
-
