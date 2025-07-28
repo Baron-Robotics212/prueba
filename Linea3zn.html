@@ -1,94 +1,122 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Línea 3zn</title>
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #000;
-            color: white;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 0 15px;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Línea 3zn</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-        .button-group {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 20px;
-            width: 100%;
-            max-width: 900px;
-        }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000);
+      background-size: 300% 300%;
+      animation: fondoOscuroAnimado 20s ease infinite;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
 
-        .button-column {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 45%;
-        }
+    @keyframes fondoOscuroAnimado {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
 
-        button {
-            padding: 20px 60px;
-            font-size: 20px;
-            border: none;
-            border-radius: 12px;
-            background-color: #ffffff;
-            color: #333;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            box-sizing: border-box;
-        }
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      justify-content: space-between;
+    }
 
-        button:hover {
-            box-shadow: 0 0 14px 4px #7fffd4;
-            background-color: #f0f0f0;
-        }
+    .card {
+      background-color: rgba(15, 15, 15, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      width: 48%;
+      box-shadow: 0 0 12px rgba(127, 255, 212, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      user-select: none;
+    }
 
-        /* Estilos para móviles */
-        @media (max-width: 600px) {
-            .button-group {
-                flex-direction: column;
-                align-items: center;
-            }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
+    }
 
-            .button-column {
-                width: 100%;
-                align-items: center;
-            }
+    .card-title {
+      font-size: 22px;
+      color: #7fffd4;
+      margin-bottom: 10px;
+    }
 
-            button {
-                width: 80%;
-                margin: 10px 0;
-                padding: 15px 20px;
-                font-size: 18px;
-            }
-        }
-    </style>
+    .card-description {
+      font-size: 16px;
+      color: #ccc;
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .card {
+        width: 100%;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="button-group">
-        <!-- Columna 1 -->
-        <div class="button-column">
-            <button onclick="window.location.href='https://drive.google.com/file/d/1GmJwTexGGyANgTj-gcTC4u8Dc2NjDju9/view?usp=sharing'">Banda transportadora BM6</button>
-            <button onclick="window.location.href='encelosx60.html'">Encelofanadora SX60 SOLLAS</button>
-            <button onclick="window.location.href='https://drive.google.com/file/d/1-mtdSosQ2rWre4ppNJTrSzvY9QaxLwY3/view?usp=sharing'">Impresora laser MACSA</button>
-        </div>
-
-        <!-- Columna 2 -->
-        <div class="button-column">
-            <button onclick="window.location.href='https://drive.google.com/file/d/1allT_IvBuAB9SqIigvEN1gpfL1-S5zGt/view?usp=sharing'">Banda transportadora BM5</button>
-            <button onclick="window.location.href='https://drive.google.com/file/d/1PCeIIGb72duiNwdy5R793u2mr6wCloPf/view?usp=sharing'">Armadora de cajas Bivans</button>
-            <button onclick="window.location.href='index.html'">Regresar al Menú Principal</button>
-        </div>
+  <div class="button-group">
+    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1GmJwTexGGyANgTj-gcTC4u8Dc2NjDju9/view?usp=sharing'">
+      <div class="card-title">Banda transportadora BM6</div>
+      <p class="card-description">Cinta transportadora que conecta procesos de producción continua.</p>
     </div>
+
+    <div class="card" onclick="window.location.href='encelosx60.html'">
+      <div class="card-title">Encelofanadora SX60 SOLLAS</div>
+      <p class="card-description">Máquina envolvedora para estuches con acabado de celofán.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1-mtdSosQ2rWre4ppNJTrSzvY9QaxLwY3/view?usp=sharing'">
+      <div class="card-title">Impresora láser MACSA</div>
+      <p class="card-description">Equipo para impresión láser de alta precisión.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1allT_IvBuAB9SqIigvEN1gpfL1-S5zGt/view?usp=sharing'">
+      <div class="card-title">Banda transportadora BM5</div>
+      <p class="card-description">Cinta transportadora para abastecimiento en línea BM5.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1PCeIIGb72duiNwdy5R793u2mr6wCloPf/view?usp=sharing'">
+      <div class="card-title">Armadora de cajas Bivans</div>
+      <p class="card-description">Equipo automático para formar cajas de cartón listas para empacar.</p>
+    </div>
+
+    <div class="card" onclick="window.location.href='index.html'">
+      <div class="card-title">Regresar al Menú Principal</div>
+      <p class="card-description">Haz clic aquí para volver a la pantalla inicial del sistema.</p>
+    </div>
+  </div>
 </body>
 </html>
+
