@@ -2,166 +2,128 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Zona Negra</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Menú principal</title>
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 0;
-      background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
       font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(-45deg, #0d0d0d, #1a1a1a, #111822, #000000);
+      background-size: 300% 300%;
+      animation: fondoOscuroAnimado 20s ease infinite;
+      color: white;
       display: flex;
-      flex-direction: column;
+      justify-content: center;
       align-items: center;
       min-height: 100vh;
+      padding: 20px;
     }
 
-    .imagen-con-boton {
-      position: relative;
-      margin-top: 20px;
-      width: 90%;
-      max-width: 600px;
-      border-radius: 20px;
-      padding: 6px;
-      background: linear-gradient(270deg, #00cfff, #7fffd4, #00cfff);
-      background-size: 600% 600%;
-      animation: gradienteAnim 8s ease infinite;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
-      overflow: hidden;
-    }
-
-    .imagen-con-boton img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border-radius: 14px;
-    }
-
-    @keyframes gradienteAnim {
+    @keyframes fondoOscuroAnimado {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
 
-    .titulo-zona {
-      position: absolute;
-      top: 2%;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 2em;
-      color: black;
-      text-shadow: 1px 1px 5px black;
-      z-index: 10;
-    }
-
-    .boton-transparente {
-      position: absolute;
-      padding: 6px 16px;
-      font-size: 1em;
-      background-color: rgba(0, 0, 0, 0.6); /* Más oscuro para que se note mejor */
-      color: #ccc;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 5px;
-      cursor: pointer;
-      white-space: nowrap;
-      transition: box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-      user-select: none;
-      z-index: 20;
-    }
-
-    .boton-transparente:hover {
-      background-color: rgba(0, 0, 0, 0.8);
-      box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
-      color: #7fffd4;
-      border-color: #7fffd4;
-    }
-
-    /* Posiciones relativas usando porcentaje */
-    .linea1 { top: 76%; left: 67%; }
-    .linea2 { top: 58%; left: 67%; }
-    .linea3 { top: 43%; left: 67%; }
-    .linea4 { top: 26%; left: 67%; }
-    .linea5 { top: 15%; left: 67%; }
-
-    .banda { top: 57%; left: 5%; }
-    .hercules { top: 69%; left: 5%; }
-    .estibadores { top: 43%; left: 5%; }
-    .videojet { top: 30%; left: 5%; }
-
-    .button-container {
-      width: 90%;
-      max-width: 600px;
-      padding: 30px 20px;
-      margin-top: 30px;
+    .button-group {
       display: flex;
-      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      max-width: 1000px;
+      justify-content: space-between;
     }
 
-    .button-link {
-      display: inline-block;
-      text-align: center;
-      padding: 10px 20px;
-      font-size: 1.1em;
-      background-color: rgba(0, 0, 0, 0.6);
-      color: #ccc;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      border-radius: 5px;
-      text-decoration: none;
-      cursor: pointer;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-      user-select: none;
+    .card {
+      background-color: rgba(15, 15, 15, 0.85);
+      border-radius: 12px;
+      padding: 20px;
+      width: 48%;
       box-shadow: 0 0 12px rgba(127, 255, 212, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
     }
 
-    .button-link:hover {
-      background-color: rgba(0, 0, 0, 0.8);
+    .card:hover {
+      transform: translateY(-5px);
       box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
+    }
+
+    .card-title {
+      font-size: 22px;
       color: #7fffd4;
-      border-color: #7fffd4;
+      margin-bottom: 10px;
+    }
+
+    .card-description {
+      font-size: 16px;
+      color: #ccc;
+      margin: 0;
     }
 
     @media (max-width: 600px) {
-      .boton-transparente {
-        font-size: 1.3em;
-        padding: 10px 20px;
+      .button-group {
+        flex-direction: column;
+        align-items: center;
       }
 
-      .titulo-zona {
-        font-size: 1.6em;
+      .card {
+        width: 100% !important;
       }
 
-      .button-link {
-        font-size: 1.3em;
-        padding: 15px 25px;
+      .card-title {
+        font-size: 20px;
+      }
+
+      .card-description {
+        font-size: 14px;
       }
     }
   </style>
 </head>
 <body>
+  <div class="button-group">
+    <div class="card" onclick="window.location.href='zona-negra.html'">
+      <div class="card-title">Zona negra</div>
+      <p class="card-description">Accede a la línea de producción de la zona negra.</p>
+    </div>
 
-  <div class="imagen-con-boton">
-    <p class="titulo-zona">Zona Negra</p>
-    <img src="captura.png" alt="Plano Zona Negra" />
+    <div class="card" onclick="window.location.href='zona-gris.html'">
+      <div class="card-title">Zona gris</div>
+      <p class="card-description">Accede a la línea de producción de la zona gris.</p>
+    </div>
 
-    <a href="Linea1zn.html"><button class="boton-transparente linea1">Línea 1</button></a>
-    <a href="Linea2zn.html"><button class="boton-transparente linea2">Línea 2</button></a>
-    <a href="Linea3zn.html"><button class="boton-transparente linea3">Línea 3</button></a>
-    <a href="Linea4zn.html"><button class="boton-transparente linea4">Línea 4</button></a>
-    <a href="Linea5zn.html"><button class="boton-transparente linea5">Línea 5</button></a>
+    <div class="card" onclick="window.location.href='https://forms.office.com/Pages/ResponsePage.aspx?id=Y7DJjFzXPUOA0JEsfAAuCx3Bfq2G6jJEs0qzaQroH3VUOFRYWlVHTEFFTFdGRDM5SVRJM1NEMlkwVS4u'">
+      <div class="card-title">Montar aviso</div>
+      <p class="card-description">Formulario para notificar una incidencia o requerimiento.</p>
+    </div>
 
-    <a href="https://drive.google.com/file/d/15g-i5gs1UweSrDGLWqCUg3P0rShWY_do/view?usp=sharing">
-      <button class="boton-transparente banda">Banda espiral</button>
-    </a>
-    <a href="#"><button class="boton-transparente hercules">Hércules</button></a>
-    <a href="#"><button class="boton-transparente estibadores">Estibadores</button></a>
-    <a href="https://drive.google.com/file/d/1wTekxVDdgBibF7hi1wWfTrrh4w_6X2Md/view?usp=sharing">
-      <button class="boton-transparente videojet">Video Jet</button>
-    </a>
+    <div class="card" onclick="pedirCredenciales()">
+      <div class="card-title">Claves</div>
+      <p class="card-description">Accede con credenciales para ver claves de configuración de las máquinas.</p>
+    </div>
   </div>
 
-  <div class="button-container">
-    <a href="index.html" class="button-link">Regresar al Menú Principal</a>
-  </div>
+  <script>
+    function pedirCredenciales() {
+      const usuario = prompt("Ingrese su usuario:");
+      const contraseña = prompt("Ingrese su contraseña:");
 
+      const usuarioValido = "YANBAL";
+      const contraseñaValida = "Mtto2025*";
+
+      if (usuario === usuarioValido && contraseña === contraseñaValida) {
+        window.location.href = "claves.html";
+      } else {
+        alert("Credenciales incorrectas. Acceso denegado.");
+      }
+    }
+  </script>
 </body>
 </html>
+
