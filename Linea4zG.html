@@ -45,27 +45,37 @@
       padding: 20px;
       width: 48%;
       box-shadow: 0 0 12px rgba(127, 255, 212, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
       cursor: pointer;
       user-select: none;
       text-align: center;
     }
 
+    /* Hover cambia sombra, levanta la tarjeta y cambia el color del texto */
     .card:hover {
       transform: translateY(-5px);
       box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
+      /* color aquí no lo ponemos porque los hijos tienen color fijo */
+    }
+
+    /* Cambiar color del texto en hover para título y descripción */
+    .card:hover .card-title,
+    .card:hover .card-description {
+      color: #7fffd4; /* Azul claro */
     }
 
     .card-title {
       font-size: 22px;
-      color: #7fffd4;
+      color: #7fffd4; /* Color por defecto */
       margin-bottom: 10px;
+      transition: color 0.3s ease;
     }
 
     .card-description {
       font-size: 16px;
-      color: #ccc;
+      color: #ccc; /* Color por defecto */
       margin: 0;
+      transition: color 0.3s ease;
     }
 
     @media (max-width: 600px) {
@@ -94,3 +104,4 @@
   </div>
 </body>
 </html>
+
