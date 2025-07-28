@@ -25,15 +25,9 @@
     }
 
     @keyframes fondoOscuroAnimado {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .imagen-con-boton {
@@ -43,12 +37,37 @@
       max-width: 600px;
       border-radius: 20px;
       padding: 6px;
-      background: linear-gradient(270deg, #00cfff, #7fffd4, #00cfff);
-      background-size: 600% 600%;
-      animation: gradienteAnim 8s ease infinite;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      background: rgba(10, 10, 10, 0.6);
+      box-shadow:
+        0 0 8px rgba(0, 255, 200, 0.15),
+        0 0 18px rgba(0, 255, 200, 0.05),
+        inset 0 0 12px rgba(0, 255, 200, 0.07);
+      border: 2px solid transparent;
+      background-clip: padding-box;
       overflow: hidden;
       color: black;
+      animation: marcoBrillante 6s linear infinite;
+    }
+
+    @keyframes marcoBrillante {
+      0% {
+        box-shadow:
+          0 0 8px rgba(0, 255, 200, 0.15),
+          0 0 18px rgba(0, 255, 200, 0.05),
+          inset 0 0 12px rgba(0, 255, 200, 0.07);
+      }
+      50% {
+        box-shadow:
+          0 0 12px rgba(127, 255, 212, 0.25),
+          0 0 24px rgba(127, 255, 212, 0.1),
+          inset 0 0 18px rgba(127, 255, 212, 0.15);
+      }
+      100% {
+        box-shadow:
+          0 0 8px rgba(0, 255, 200, 0.15),
+          0 0 18px rgba(0, 255, 200, 0.05),
+          inset 0 0 12px rgba(0, 255, 200, 0.07);
+      }
     }
 
     .imagen-con-boton img {
@@ -58,24 +77,43 @@
       border-radius: 14px;
     }
 
-    @keyframes gradienteAnim {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
     .titulo-zona {
       position: absolute;
       top: 2%;
       left: 50%;
       transform: translateX(-50%);
-      font-size: 2em;
-      color: black;
-      text-shadow: 1px 1px 5px black;
+      font-size: 2.8em;
+      font-weight: bold;
+      font-family: 'Segoe UI', 'Arial Black', sans-serif;
+      color: #00f7ff;
+      text-shadow:
+        0 0 5px #00f7ff,
+        0 0 10px #00c0ff,
+        0 0 15px #0088cc,
+        2px 2px 6px black;
       z-index: 10;
+      animation: brilloTitulo 3s ease-in-out infinite;
     }
 
-    /* Botones transparentes con brillo gris suave */
+    @keyframes brilloTitulo {
+      0%, 100% {
+        text-shadow:
+          0 0 5px #00f7ff,
+          0 0 10px #00c0ff,
+          0 0 15px #0088cc,
+          2px 2px 6px black;
+        transform: translateX(-50%) scale(1);
+      }
+      50% {
+        text-shadow:
+          0 0 8px #00f7ff,
+          0 0 16px #00c0ff,
+          0 0 24px #0088cc,
+          2px 2px 6px black;
+        transform: translateX(-50%) scale(1.05);
+      }
+    }
+
     .boton-transparente {
       position: absolute;
       padding: 8px 18px;
@@ -93,8 +131,6 @@
 
     .boton-transparente:hover {
       background-color: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 12px 1px rgba(80, 80, 80, 0.4);
-      color: #999;
       box-shadow: 0 0 6px 1px rgba(180, 180, 180, 0.5);
       text-shadow: 0 0 5px #bbb;
     }
@@ -112,7 +148,6 @@
       border-color: #444;
     }
 
-    /* Posiciones relativas usando porcentaje */
     .linea1 { top: 73%; left: 64%; }
     .linea2 { top: 58%; left: 64%; }
     .linea3 { top: 40%; left: 64%; }
@@ -124,7 +159,6 @@
     .banda { top: 54%; left: 4%; }
     .hercules { top: 65%; left: 4%; }
 
-    /* Nuevo estilo para el contenedor del botón final */
     .button-container {
       width: 100%;
       max-width: 600px;
@@ -133,7 +167,6 @@
       justify-content: center;
     }
 
-    /* Estilo tipo "card" para el botón regresar */
     .button-link {
       background-color: rgba(15, 15, 15, 0.85);
       border-radius: 12px;
@@ -175,7 +208,7 @@
       }
 
       .titulo-zona {
-        font-size: 1.6em;
+        font-size: 2em;
       }
 
       .button-link {
@@ -217,4 +250,3 @@
 
 </body>
 </html>
-
