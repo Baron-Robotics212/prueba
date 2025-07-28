@@ -46,24 +46,31 @@
       width: 100%;
     }
 
-    .boton {
-      padding: 15px 20px;
-      font-size: 18px;
-      border: none;
+    /* Estilo para los botones igual al de "Regresar al Menú Principal" */
+    .button-link {
+      background-color: rgba(15, 15, 15, 0.85);
       border-radius: 12px;
-      background-color: #fff;
-      color: #333;
-      cursor: pointer;
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      padding: 20px;
       width: 100%;
+      max-width: 400px;
+      box-shadow: 0 0 12px rgba(127, 255, 212, 0.15);
+      color: #7fffd4;
       text-decoration: none;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      user-select: none;
       display: block;
+      font-size: 1.4em;
+      font-weight: 600;
+      line-height: 1.2;
     }
 
-    .boton:hover {
-      background-color: #f0f0f0;
-      box-shadow: 0 0 14px 4px #7fffd4;
-      color: #000;
+    .button-link:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
+      background-color: rgba(15, 15, 15, 1);
+      color: #aaffff;
     }
 
     @media (max-width: 600px) {
@@ -71,8 +78,10 @@
         font-size: 2em;
       }
 
-      .boton {
-        font-size: 16px;
+      .button-link {
+        font-size: 1.2em;
+        padding: 16px;
+        max-width: 100%;
       }
     }
   </style>
@@ -83,10 +92,14 @@
 
   <div class="button-group">
     <div class="button-column">
-      <a href="https://drive.google.com/file/d/1XkhXJk2X5BaCF83VqnQOMHILDklxOpRa/view?usp=sharing" class="boton">Taxonomía</a>
-      <a href="#" class="boton">Manual</a>
+      <a href="https://drive.google.com/file/d/1XkhXJk2X5BaCF83VqnQOMHILDklxOpRa/view?usp=sharing" class="button-link" target="_blank" rel="noopener noreferrer">Taxonomía</a>
+      <a href="#" class="button-link">Manual</a>
     </div>
   </div>
+
+</body>
+</html>
+
 
 </body>
 </html>
