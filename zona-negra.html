@@ -25,15 +25,9 @@
     }
 
     @keyframes fondoOscuroAnimado {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     .imagen-con-boton {
@@ -66,7 +60,7 @@
 
     .titulo-zona {
       position: absolute;
-      top: 2%;
+      top: 1.2%; /* Subido para no chocar con botón */
       left: 50%;
       transform: translateX(-50%);
       font-size: 2em;
@@ -75,7 +69,6 @@
       z-index: 10;
     }
 
-    /* Botones transparentes con brillo gris suave */
     .boton-transparente {
       position: absolute;
       padding: 8px 18px;
@@ -93,8 +86,8 @@
 
     .boton-transparente:hover {
       background-color: rgba(255, 255, 255, 0.05);
-      box-shadow: 0 0 20px 1px rgba(180, 180, 180, 0.4);
-      box-shadow: 0 0 6px 1px rgba(180, 180, 180, 0.5);
+      box-shadow: 0 0 12px 1px rgba(180, 180, 180, 0.5);
+      color: #999;
       text-shadow: 0 0 5px #bbb;
     }
 
@@ -118,12 +111,11 @@
     .linea4 { top: 25%; left: 64%; }
     .linea5 { top: 12%; left: 64%; }
 
-    .videojet { top: 24%; left: 4%; }
-    .estibadores { top: 37%; left: 4%; }
-    .banda { top: 50%; left: 4%; }
-    .hercules { top: 65%; left: 4%; }
+    .videojet     { top: 24%; left: 4%; }
+    .estibadores  { top: 37%; left: 4%; }
+    .banda        { top: 50%; left: 4%; }
+    .hercules     { top: 65%; left: 4%; }
 
-    /* Nuevo estilo para el contenedor del botón final */
     .button-container {
       width: 100%;
       max-width: 600px;
@@ -132,7 +124,6 @@
       justify-content: center;
     }
 
-    /* Estilo tipo "card" para el botón regresar */
     .button-link {
       background-color: rgba(15, 15, 15, 0.85);
       border-radius: 12px;
@@ -168,6 +159,10 @@
     }
 
     @media (max-width: 600px) {
+      .imagen-con-boton {
+        width: 98%; /* Expandir imagen un poco más en móviles */
+      }
+
       .boton-transparente {
         font-size: 1.3em;
         padding: 10px 20px;
@@ -175,6 +170,7 @@
 
       .titulo-zona {
         font-size: 1.6em;
+        top: 1.5%; /* Asegurarse que no se empalme en móviles */
       }
 
       .button-link {
