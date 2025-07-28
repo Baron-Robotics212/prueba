@@ -62,16 +62,24 @@
       box-shadow: 0 0 20px rgba(127, 255, 212, 0.5);
     }
 
+    .card:hover .card-title,
+    .card:hover .card-description {
+      color: #7fffd4;
+      transition: color 0.3s ease;
+    }
+
     .card-title {
       font-size: 22px;
       color: #7fffd4;
       margin-bottom: 10px;
+      transition: color 0.3s ease;
     }
 
     .card-description {
       font-size: 16px;
       color: #ccc;
       margin: 0;
+      transition: color 0.3s ease;
     }
 
     @media (max-width: 600px) {
@@ -88,12 +96,12 @@
 </head>
 <body>
   <div class="button-group">
-    <div class="card" onclick="window.location.href='https://drive.google.com/file/d/1iaHYdnYnjN21sg7WpTdtlvLLQl54ocX3/view?usp=sharing'">
+    <div class="card" onclick="window.open('https://drive.google.com/file/d/1iaHYdnYnjN21sg7WpTdtlvLLQl54ocX3/view?usp=sharing', '_blank')">
       <div class="card-title">Sacheteadora Tecnopack</div>
       <p class="card-description">Máquina especializada para el empaquetado en sachets de alta eficiencia.</p>
     </div>
 
-    <div class="card" onclick="window.location.href='index.html'">
+    <div class="card" onclick="window.open('index.html', '_blank')">
       <div class="card-title">Regresar al Menú Principal</div>
       <p class="card-description">Haz clic aquí para volver a la pantalla inicial del sistema.</p>
     </div>
