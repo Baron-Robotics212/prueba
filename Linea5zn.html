@@ -40,7 +40,7 @@
       width: 100%;
       max-width: 900px;
       justify-content: center;
-      align-items: stretch; /* Asegura que los hijos estiren la altura */
+      align-items: stretch; /* para que la altura sea igual */
     }
     .card {
       background-color: rgba(15, 15, 15, 0.85);
@@ -57,7 +57,7 @@
       flex-direction: column;
       justify-content: center;
 
-      min-height: 220px; /* altura mínima para igualar */
+      min-height: 220px; /* altura fija igual para todos */
     }
     .card:hover {
       transform: translateY(-5px);
@@ -72,15 +72,7 @@
       font-size: 16px;
       color: #ccc;
       margin: 0;
-      flex-grow: 1; /* para que el texto empuje la altura */
-    }
-    .card.full-width {
-      width: 100%;
-      min-height: 60px; /* botón más pequeño para "Regresar" */
-      padding: 15px 20px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      flex-grow: 1;
     }
     @media (max-width: 600px) {
       .button-group {
@@ -90,10 +82,6 @@
       .card {
         width: 80%;
         min-height: 220px;
-      }
-      .card.full-width {
-        width: 80%;
-        min-height: 60px;
       }
     }
   </style>
@@ -108,8 +96,9 @@
       <div class="card-title">Banda BM5</div>
       <p class="card-description">Banda transportadora BM5 para transporte continuo y seguro.</p>
     </div>
-    <div class="card full-width" onclick="window.location.href='index.html'">
+    <div class="card" onclick="window.location.href='index.html'">
       <div class="card-title">Regresar al Menú Principal</div>
+      <p class="card-description">Haz clic aquí para volver a la pantalla inicial del sistema.</p>
     </div>
   </div>
 </body>
