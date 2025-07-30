@@ -59,15 +59,15 @@
     }
 
     .titulo-zona {
-      position: absolute;
-      top: 50%; /* Subido para no chocar con botón */
-      left: 35%;
-      transform: translateX(-50%);
-      font-size: 2em;
-      color: black;
-      text-shadow: 1px 1px 5px black;
-      z-index: 10;
-    }
+  position: absolute;
+  top: 85%; /* o el porcentaje que mejor quede abajo */
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2em;
+  color: black;
+  text-shadow: 1px 1px 5px black;
+  z-index: 10;
+}
 
     .boton-transparente {
       position: absolute;
@@ -157,8 +157,12 @@
     }
 
     @media (max-width: 600px) {
-      .imagen-con-boton {
-        width: 98%; /* Expandir imagen un poco más en móviles */
+      /* quita esta regla que mueve el título arriba */
+  /*
+  .titulo-zona {
+    top: 1.5%;
+  }
+  */
       }
 
       .boton-transparente {
