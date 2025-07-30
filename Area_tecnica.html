@@ -32,16 +32,15 @@
 
     .zona-plano {
       position: relative;
-      width: 100%;
+      width: 95%;
       max-width: 700px;
-      margin: 0 auto;
     }
 
     .imagen-con-borde {
       border-radius: 20px;
       padding: 6px;
       background: linear-gradient(270deg, #00cfff, #7fffd4, #00cfff);
-      background-size: 600% 600%;
+      background-size: 500% 500%;
       animation: gradienteAnim 8s ease infinite;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
       overflow: hidden;
@@ -57,8 +56,6 @@
       display: block;
       width: 100%;
       height: auto;
-      max-height: 80vh;
-      object-fit: contain;
       border-radius: 14px;
     }
 
@@ -108,11 +105,11 @@
       border-color: #444;
     }
 
-    /* Posiciones relativas con porcentaje adaptadas */
+    /* Posiciones relativas con porcentaje adaptadas para la zona gris */
     .linea1 { top: 5%; left: 50%; }
     .linea2 { top: 5%; left: 40%; }
     .linea3 { top: 5%; left: 30%; }
-    .linea4 { top: 5%; left: 20%; }
+    .linea4 { top: 5%;  left: 20%; }
 
     .banda       { top: 63%; left: 80%; }
     .estibadores { top: 27%; left: 90%; }
@@ -172,7 +169,7 @@
 
       .titulo-zona {
         font-size: 1.6em;
-        top: 31%;
+        top: 50%;
       }
 
       .button-link {
@@ -181,13 +178,6 @@
         max-width: 100%;
       }
     }
-
-    @media (max-height: 500px) {
-      .imagen-con-borde img {
-        max-height: 60vh;
-      }
-    }
-
   </style>
 </head>
 <body>
