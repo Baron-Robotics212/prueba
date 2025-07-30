@@ -69,7 +69,6 @@
     }
 
     .boton-transparente {
-      position: absolute;
       padding: 6px 12px;
       font-size: 1em;
       background-color: transparent;
@@ -101,17 +100,17 @@
       border-color: #444;
     }
 
-    /* Posicionamiento en escritorio */
-    .tanque_pulmon { top: 5%; left: 2%; }
-    .compresores { top: 5%; left: 28%; }
-    .aquamat { top: 14%; left: 18%; }
-    .calderas { top: 26%; left: 20%; }
-    .chiller { top: 15%; left: 63%; }
-    .extracciones { top: 45%; left: 44%; }
-    .suministros  { top: 70%; left: 44%; }
+    /* Posicionamiento de botones en desktop */
+    .escritorio .tanque_pulmon { position: absolute; top: 5%; left: 2%; }
+    .escritorio .compresores { position: absolute; top: 5%; left: 28%; }
+    .escritorio .aquamat { position: absolute; top: 14%; left: 18%; }
+    .escritorio .calderas { position: absolute; top: 26%; left: 20%; }
+    .escritorio .chiller { position: absolute; top: 15%; left: 63%; }
+    .escritorio .extracciones { position: absolute; top: 45%; left: 44%; }
+    .escritorio .suministros  { position: absolute; top: 70%; left: 44%; }
 
-    /* Botones para móvil */
-    .botones-movil {
+    /* Botones para móvil (vertical) */
+    .movil {
       display: none;
       flex-direction: column;
       gap: 10px;
@@ -120,8 +119,7 @@
       max-width: 600px;
     }
 
-    .botones-movil a button {
-      position: static;
+    .movil a button {
       width: 100%;
       font-size: 1.1em;
     }
@@ -164,35 +162,31 @@
       line-height: 1.3;
     }
 
-    @media (max-width: 600px) {
-      .imagen-con-boton .boton-transparente {
-        display: none; /* Oculta botones posicionados sobre la imagen */
+    /* Cambiar a vista móvil */
+    @media (max-width: 768px) {
+      .escritorio {
+        display: none;
       }
 
-      .botones-movil {
-        display: flex; /* Muestra botones verticales */
+      .movil {
+        display: flex;
       }
 
       .titulo-zona {
-        font-size: 1.5em;
+        font-size: 1.6em;
         top: 5%;
-      }
-
-      .button-link {
-        font-size: 1.2em;
-        padding: 16px;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="imagen-con-boton">
+  <!-- Imagen con botones (solo visible en desktop) -->
+  <div class="imagen-con-boton escritorio">
     <p class="titulo-zona">Área Técnica</p>
     <img src="plano-area-tecnica.png" alt="Plano Zona Negra" />
 
-    <!-- Botones posicionados en escritorio -->
-    <a href="tanque_pulmon.html"><button class="boton-transparente boton-gris tanque_pulmon">Tanque<br>pulmon</button></a>
+    <a href="tanque_pulmon.html"><button class="boton-transparente boton-gris tanque_pulmon">Tanque<br>Pulmón</button></a>
     <a href="compresores.html"><button class="boton-transparente boton-gris compresores">Compresores</button></a>
     <a href="aquamat.html"><button class="boton-transparente boton-gris aquamat">Aquamat</button></a>
     <a href="calderas.html"><button class="boton-transparente boton-gris calderas">Calderas</button></a>
@@ -201,8 +195,8 @@
     <a href="suministros.html"><button class="boton-transparente boton-gris suministros">Suministros UV</button></a>
   </div>
 
-  <!-- Botones visibles solo en móvil -->
-  <div class="botones-movil">
+  <!-- Botones para móvil -->
+  <div class="movil">
     <a href="tanque_pulmon.html"><button class="boton-transparente boton-gris">Tanque Pulmón</button></a>
     <a href="compresores.html"><button class="boton-transparente boton-gris">Compresores</button></a>
     <a href="aquamat.html"><button class="boton-transparente boton-gris">Aquamat</button></a>
@@ -212,8 +206,9 @@
     <a href="suministros.html"><button class="boton-transparente boton-gris">Suministros UV</button></a>
   </div>
 
+  <!-- Botón de regreso -->
   <div class="button-container">
-    <a href="index.html" class="button-link" aria-label="Regresar al Menú Principal">
+    <a href="index.html" class="button-link">
       Regresar al Menú Principal
       <p class="button-description">Haz clic aquí para volver a la pantalla inicial del sistema.</p>
     </a>
