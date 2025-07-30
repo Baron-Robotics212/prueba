@@ -20,10 +20,11 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       min-height: 100vh;
       padding: 20px;
       position: relative;
-      overflow: hidden;
+      overflow-x: hidden; /* ✅ Permitimos scroll vertical */
     }
 
     @keyframes fondoOscuroAnimado {
@@ -102,10 +103,12 @@
       opacity: 0;
       transition: opacity 0.3s ease;
     }
+
     .modal-overlay.active {
       visibility: visible;
       opacity: 1;
     }
+
     .modal {
       background: #121212;
       padding: 30px 25px;
@@ -117,6 +120,7 @@
       font-size: 16px;
       position: relative;
     }
+
     .modal h2 {
       margin-top: 0;
       margin-bottom: 20px;
@@ -124,11 +128,13 @@
       font-weight: 700;
       text-align: center;
     }
+
     .modal label {
       display: block;
       margin-bottom: 6px;
       font-weight: 600;
     }
+
     .modal input[type="text"],
     .modal input[type="password"] {
       width: 100%;
@@ -142,10 +148,12 @@
       outline: none;
       transition: border-color 0.3s ease;
     }
+
     .modal input[type="text"]:focus,
     .modal input[type="password"]:focus {
       border-color: #7fffd4;
     }
+
     .modal button {
       width: 100%;
       padding: 12px;
@@ -158,9 +166,11 @@
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
+
     .modal button:hover {
       background-color: #7fffd4;
     }
+
     .modal .close-btn {
       position: absolute;
       top: 12px;
@@ -170,6 +180,7 @@
       cursor: pointer;
       user-select: none;
     }
+
     .modal .error-message {
       color: #ff6b6b;
       font-weight: 700;
@@ -177,6 +188,7 @@
       text-align: center;
       display: none;
     }
+
     .modal .error-message.active {
       display: block;
     }
@@ -195,18 +207,18 @@
     </div>
 
     <div class="card" onclick="window.location.href='Area_tecnica.html'">
-      <div class="card-title">Area Tecnica</div>
-      <p class="card-description">Accede al area tecnica.</p>
+      <div class="card-title">Área Técnica</div>
+      <p class="card-description">Accede al área técnica.</p>
     </div>
 
     <div class="card" onclick="window.location.href='fabricacion.html'">
       <div class="card-title">Fabricación</div>
-      <p class="card-description">Accede al area de Fabricación.</p>
+      <p class="card-description">Accede al área de fabricación.</p>
     </div>
 
     <div class="card" onclick="window.location.href='Busqueda.html'">
-      <div class="card-title">Busqueda</div>
-      <p class="card-description">Busca equipos por su denominación, codigo y ubicación .</p>
+      <div class="card-title">Búsqueda</div>
+      <p class="card-description">Busca equipos por su denominación, código y ubicación.</p>
     </div>
 
     <div class="card" onclick="window.location.href='https://forms.office.com/Pages/ResponsePage.aspx?id=Y7DJjFzXPUOA0JEsfAAuCx3Bfq2G6jJEs0qzaQroH3VUOFRYWlVHTEFFTFdGRDM5SVRJM1NEMlkwVS4u'">
@@ -255,14 +267,13 @@
 
     closeBtn.addEventListener('click', cerrarModal);
 
-    // Cerrar modal al presionar Escape
     window.addEventListener('keydown', (e) => {
-      if(e.key === "Escape" && modal.classList.contains('active')) {
+      if (e.key === "Escape" && modal.classList.contains('active')) {
         cerrarModal();
       }
     });
 
-    loginForm.addEventListener('submit', function(e) {
+    loginForm.addEventListener('submit', function (e) {
       e.preventDefault();
       const usuario = loginForm.usuario.value.trim();
       const contraseña = loginForm.password.value;
@@ -270,7 +281,7 @@
       const usuarioValido = "YANBAL";
       const contraseñaValida = "Mtto2025*";
 
-      if(usuario === usuarioValido && contraseña === contraseñaValida) {
+      if (usuario === usuarioValido && contraseña === contraseñaValida) {
         cerrarModal();
         window.location.href = "claves.html";
       } else {
@@ -280,4 +291,3 @@
   </script>
 </body>
 </html>
-
