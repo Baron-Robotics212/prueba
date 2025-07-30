@@ -33,8 +33,34 @@
 
     .titulo {
       font-size: 2.5em;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       text-shadow: 1px 1px 5px black;
+    }
+
+    .card {
+      background-color: #1a1a1a;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      width: 100%;
+      max-width: 800px;
+      box-shadow: 0 0 10px rgba(127, 255, 212, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 20px rgba(127, 255, 212, 0.6);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      color: #7fffd4;
+    }
+
+    .card p {
+      margin: 10px 0;
+      line-height: 1.6;
     }
 
     .button-group {
@@ -90,12 +116,23 @@
         padding: 16px;
         max-width: 100%;
       }
+
+      .card {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
   <div class="titulo">Aquamat</div>
+
+  <!-- Cuadro agregado -->
+  <div class="card">
+    <h2>Información Técnica</h2>
+    <p>Consulta rápida de datos relevantes sobre la máquina Aquamat.</p>
+    <p>Presión: 5 bar &nbsp;|&nbsp; Voltaje: 220V &nbsp;|&nbsp; Caudal: 10 L/min</p>
+  </div>
 
   <div class="button-group">
     <a href="https://drive.google.com/file/d/1XkhXJk2X5BaCF83VqnQOMHILDklxOpRa/view?usp=sharing" class="button-link" target="_blank" rel="noopener noreferrer">
