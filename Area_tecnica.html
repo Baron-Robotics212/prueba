@@ -32,8 +32,9 @@
 
     .zona-plano {
       position: relative;
-      width: 95%;
+      width: 100%;
       max-width: 700px;
+      margin: 0 auto;
     }
 
     .imagen-con-borde {
@@ -56,6 +57,8 @@
       display: block;
       width: 100%;
       height: auto;
+      max-height: 80vh;
+      object-fit: contain;
       border-radius: 14px;
     }
 
@@ -105,11 +108,11 @@
       border-color: #444;
     }
 
-    /* Posiciones relativas con porcentaje adaptadas para la zona gris */
+    /* Posiciones relativas con porcentaje adaptadas */
     .linea1 { top: 5%; left: 50%; }
     .linea2 { top: 5%; left: 40%; }
     .linea3 { top: 5%; left: 30%; }
-    .linea4 { top: 5%;  left: 20%; }
+    .linea4 { top: 5%; left: 20%; }
 
     .banda       { top: 63%; left: 80%; }
     .estibadores { top: 27%; left: 90%; }
@@ -178,6 +181,13 @@
         max-width: 100%;
       }
     }
+
+    @media (max-height: 500px) {
+      .imagen-con-borde img {
+        max-height: 60vh;
+      }
+    }
+
   </style>
 </head>
 <body>
