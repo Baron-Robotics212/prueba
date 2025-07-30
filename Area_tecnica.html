@@ -161,20 +161,37 @@
         width: 98%; /* Expandir imagen un poco más en móviles */
       }
 
+      /* Aquí cambiamos el comportamiento de los botones para que no estén absolutos y se alineen en bloque */
       .boton-transparente {
-        font-size: 1.3em;
-        padding: 10px 20px;
+        position: static !important;
+        display: inline-block;
+        margin: 6px 6px 10px 6px;
+        font-size: 1.2em;
+        padding: 10px 16px;
+        min-width: 130px;
+        white-space: normal;
+        border-color: rgba(127, 127, 127, 0.7);
+        color: #666;
+        text-shadow: none;
+      }
+
+      .boton-transparente:hover {
+        background-color: rgba(255, 255, 255, 0.07);
+        box-shadow: 0 0 16px rgba(150, 150, 150, 0.6);
+        color: #444;
+        text-shadow: none;
       }
 
       .titulo-zona {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-bottom: 12px;
+        text-align: center;
         font-size: 1.6em;
-        top: 1.5%; /* Asegurarse que no se empalme en móviles */
-      }
-
-      .button-link {
-        font-size: 1.2em;
-        padding: 16px;
-        max-width: 100%;
+        color: #000;
+        text-shadow: 1px 1px 3px #999;
       }
     }
   </style>
@@ -191,7 +208,6 @@
     <a href="aquamat.html"><button class="boton-transparente boton-gris aquamat">Aquamat</button></a>
     <a href="calderas.html"><button class="boton-transparente boton-gris calderas">Calderas</button></a>
     <a href="chiller.html"><button class="boton-transparente boton-gris chiller">Chiller<br>YORK</button></a>
-
 
     <a href="extracciones.html"><button class="boton-transparente boton-gris extracciones">Extracciones VE</button></a>
     <a href="suministros.html"><button class="boton-transparente boton-gris suministros">Suministros UV</button></a>
