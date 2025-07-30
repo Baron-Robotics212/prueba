@@ -41,10 +41,25 @@
       margin-bottom: 30px;
       width: 100%;
       max-width: 500px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    select.search-select {
+      padding: 15px;
+      border-radius: 10px;
+      border: none;
+      font-size: 1.1em;
+      background-color: #1f1f1f;
+      color: #7fffd4;
+      box-shadow: 0 0 10px rgba(127, 255, 212, 0.2);
+      cursor: pointer;
+      min-width: 140px;
     }
 
     .search-input {
-      width: 100%;
+      flex: 1;
       padding: 15px;
       border-radius: 10px;
       border: none;
@@ -74,11 +89,51 @@
       text-align: left;
     }
 
+    .equipo-header {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr 2fr;
+      text-align: center;
+      font-weight: bold;
+      font-size: 1.2em;
+      color: #aaffff;
+      margin-bottom: 10px;
+      border-bottom: 2px solid #7fffd4; /* línea más gruesa para encabezado */
+      padding-bottom: 8px;
+    }
+
+    #equipoList {
+      display: flex;
+      flex-direction: column;
+      gap: 0; /* quitar gap para que las líneas se vean continuas */
+    }
+
     .equipo-item {
-      margin: 10px 0;
-      line-height: 1.6;
-      font-size: 1.1em;
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr 2fr;
       color: #ccc;
+      font-size: 1.1em;
+      padding: 10px 0;
+      border-bottom: 1.5px solid rgba(127, 255, 212, 0.3); /* línea divisoria */
+    }
+
+    /* Línea superior para el primer item para separar del encabezado */
+    .equipo-item:first-child {
+      border-top: 1.5px solid rgba(127, 255, 212, 0.3);
+    }
+
+    .equipo-header > div:nth-child(1),
+    .equipo-header > div:nth-child(2),
+    .equipo-item > div:nth-child(1),
+    .equipo-item > div:nth-child(2) {
+      text-align: center;
+    }
+
+    .equipo-header > div:nth-child(3),
+    .equipo-header > div:nth-child(4),
+    .equipo-item > div:nth-child(3),
+    .equipo-item > div:nth-child(4) {
+      text-align: left;
+      padding-left: 10px;
     }
 
     .button-group {
@@ -124,9 +179,30 @@
       line-height: 1.3;
     }
 
+    /* Estilos para dispositivos móviles */
     @media (max-width: 600px) {
+      body {
+        padding: 10px;
+      }
+
       .titulo {
-        font-size: 2em;
+        font-size: 1.8em;
+        margin-bottom: 15px;
+      }
+
+      .search-container {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 400px;
+      }
+
+      select.search-select,
+      .search-input {
+        width: 100%;
+        min-width: unset;
+        font-size: 1.1em;
+        padding: 12px;
       }
 
       .button-link {
@@ -137,48 +213,129 @@
 
       .card {
         padding: 16px;
+        margin: 0 10px;
+      }
+
+      /* Cambiar la estructura del listado para móvil: columnas pasan a filas */
+      .equipo-header,
+      .equipo-item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+        border-bottom: 1.5px solid rgba(127, 255, 212, 0.3);
+        padding: 10px 0;
+      }
+
+      .equipo-item:first-child {
+        border-top: 1.5px solid rgba(127, 255, 212, 0.3);
+      }
+
+      .equipo-header > div,
+      .equipo-item > div {
+        text-align: left !important;
+        padding-left: 0 !important;
+        font-size: 1em;
+      }
+
+      .equipo-header > div {
+        font-weight: bold;
+        color: #aaffff;
       }
     }
   </style>
 </head>
 <body>
 
-  <div class="titulo">Suministros</div>
+  <div class="titulo">Busqueda</div> 
 
-  <!-- Buscador -->
   <div class="search-container">
-    <input type="text" id="searchInput" class="search-input" placeholder="Buscar por Denominación (ej. UV-501)" onkeyup="buscarEquipo()" />
+    <select id="searchCategory" class="search-select" onchange="buscarEquipo()">
+      <option value="0">Denominación</option>
+      <option value="1">Equipo</option>
+      <option value="2">Ubicación</option>
+      <option value="3">ON/OFF</option>
+    </select>
+    <input type="text" id="searchInput" class="search-input" placeholder="Buscar..." onkeyup="buscarEquipo()" /> 
   </div>
 
-  <!-- Equipos -->
   <div class="card">
     <h2>Listado</h2>
-<br><br>
-    <h2>Denominación          Equipo              Ubicación</h2>
+    <br><br>
+    <div class="equipo-header">
+      <div>Denominación</div>
+      <div>Equipo</div>
+      <div>Ubicación</div>
+      <div>ON/OFF</div>
+    </div>
     <div id="equipoList">
-      <div class="equipo-item">1) Denominación: UV-402 ; Equipo:  ; Ubicación: Piso 2, Área técnica; ON/OFF: CUARTO ELECTRICO PISO #</div>
-      <div class="equipo-item">2) Denominación: UV-502 ; Equipo:  ; Ubicación: Piso 2, Área técnica</div>
-      <div class="equipo-item">3) Denominación: UV-501 ; Equipo: 10003943 ; Ubicación: Piso 2, Área técnica</div>
-      <div class="equipo-item">4) Denominación: UV-401 ; Equipo:  ; Ubicación: Piso 2, Área técnica</div>
-      <div class="equipo-item">5) Denominación: UV-301 ; Equipo:  ; Ubicación: Piso 2, Área técnica</div>
+      <div class="equipo-item">
+        <div>UV-402</div>
+        <div></div>
+        <div>Piso 2, Área técnica</div>
+        <div>CUARTO ELECTRICO PISO #</div>
+      </div>
+      <div class="equipo-item">
+        <div>UV-502</div>
+        <div></div>
+        <div>Piso 2, Área técnica</div>
+        <div></div>
+      </div>
+      <div class="equipo-item">
+        <div>UV-501</div>
+        <div>10003943</div>
+        <div>Piso 2, Área técnica</div>
+        <div></div>
+      </div>
+      <div class="equipo-item">
+        <div>UV-401</div>
+        <div></div>
+        <div>Piso 2, Área técnica</div>
+        <div></div>
+      </div>
+      <div class="equipo-item">
+        <div>UV-301</div>
+        <div></div>
+        <div>Piso 2, Área técnica</div>
+        <div></div>
+      </div>
+     <div class="equipo-item">
+        <div>VE-501</div>
+        <div></div>
+        <div>Piso 2, Área técnica</div>
+        <div></div>
+      </div>
+     <div class="equipo-item">
+        <div>VE-301</div>
+        <div></div>
+        <div>Piso 2, Área técnica</div>
+        <div></div>
+      </div>
     </div>
   </div>
 
-    <a href="index.html" class="button-link">
-      Regresar al Menú Principal
-      <p class="button-description">Haz clic aquí para volver a la pantalla inicial del sistema.</p>
-    </a>
-  </div>
+  <a href="index.html" class="button-link">
+    Regresar al Menú Principal
+    <p class="button-description">Haz clic aquí para volver a la pantalla inicial del sistema.</p>
+  </a>
 
   <script>
+    function normalizeText(text) {
+      return text
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .toLowerCase();
+    }
+
     function buscarEquipo() {
-      const input = document.getElementById("searchInput").value.toLowerCase();
+      const input = normalizeText(document.getElementById("searchInput").value);
+      const categoryIndex = parseInt(document.getElementById("searchCategory").value);
       const items = document.querySelectorAll(".equipo-item");
 
       items.forEach(item => {
-        const texto = item.textContent.toLowerCase();
-        if (texto.includes(input)) {
-          item.style.display = "block";
+        const textoColumna = normalizeText(item.children[categoryIndex].textContent);
+        if (textoColumna.includes(input)) {
+          item.style.display = "grid";
         } else {
           item.style.display = "none";
         }
@@ -188,3 +345,4 @@
 
 </body>
 </html>
+
