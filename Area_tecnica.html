@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Área Técnica</title>
+  <title>Area tecnica</title>
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
@@ -31,9 +31,10 @@
     }
 
     .imagen-con-boton {
+      position: relative;
       margin-top: 20px;
-      width: 100%;
-      max-width: 700px;
+      width: 80%;
+      max-width: 500px;
       border-radius: 20px;
       padding: 6px;
       background: linear-gradient(270deg, #00cfff, #7fffd4, #00cfff);
@@ -45,10 +46,10 @@
     }
 
     .imagen-con-boton img {
+      display: block;
       width: 100%;
       height: auto;
       border-radius: 14px;
-      display: block;
     }
 
     @keyframes gradienteAnim {
@@ -58,34 +59,29 @@
     }
 
     .titulo-zona {
-      text-align: center;
+      position: absolute;
+      top: 50%; /* Subido para no chocar con botón */
+      left: 35%;
+      transform: translateX(-50%);
       font-size: 2em;
       color: black;
       text-shadow: 1px 1px 5px black;
-      margin-top: 10px;
-      margin-bottom: 10px;
-    }
-
-    .botones-zonas {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 12px;
-      padding: 10px;
+      z-index: 10;
     }
 
     .boton-transparente {
-      padding: 10px 20px;
+      position: absolute;
+      padding: 8px 18px;
       font-size: 1.1em;
       background-color: transparent;
       color: #444;
       border: 2px solid rgba(68, 68, 68, 0.7);
       border-radius: 7px;
       cursor: pointer;
+      white-space: nowrap;
+      transition: box-shadow 0.25s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
       text-shadow: 0 0 2px rgba(68, 68, 68, 0.4);
-      transition: all 0.25s ease;
-      min-width: 120px;
-      text-align: center;
+      z-index: 5;
     }
 
     .boton-transparente:hover {
@@ -106,6 +102,17 @@
       color: #333;
       border-color: #444;
     }
+
+    /* Posiciones relativas usando porcentaje */
+    .tanque_pulmon { top: 5%; left: 0.5%; }
+    .compresores { top: 4%; left: 29%; }
+    .aquamat { top: 14%; left: 19%; }
+    .calderas { top: 26%; left: 20%; }
+    .chiller { top: 15%; left: 62.5%; }
+
+    .extracciones { top: 45%; left: 44%; }
+    .suministros  { top: 70%; left: 44%; }
+
 
     .button-container {
       width: 100%;
@@ -150,10 +157,18 @@
     }
 
     @media (max-width: 600px) {
+      .imagen-con-boton {
+        width: 98%; /* Expandir imagen un poco más en móviles */
+      }
+
       .boton-transparente {
-        font-size: 1em;
-        min-width: 100px;
-        padding: 10px;
+        font-size: 1.3em;
+        padding: 10px 20px;
+      }
+
+      .titulo-zona {
+        font-size: 1.6em;
+        top: 1.5%; /* Asegurarse que no se empalme en móviles */
       }
 
       .button-link {
@@ -167,18 +182,19 @@
 <body>
 
   <div class="imagen-con-boton">
-    <p class="titulo-zona">Área Técnica</p>
+    <p class="titulo-zona">Area Tecnica</p>
     <img src="plano-area-tecnica.png" alt="Plano Zona Negra" />
 
-    <div class="botones-zonas">
-      <a href="tanque_pulmon.html"><button class="boton-transparente boton-gris">Tanque<br>Pulmón</button></a>
-      <a href="compresores.html"><button class="boton-transparente boton-gris">Compresores</button></a>
-      <a href="aquamat.html"><button class="boton-transparente boton-gris">Aquamat</button></a>
-      <a href="calderas.html"><button class="boton-transparente boton-gris">Calderas</button></a>
-      <a href="chiller.html"><button class="boton-transparente boton-gris">Chiller<br>YORK</button></a>
-      <a href="extracciones.html"><button class="boton-transparente boton-gris">Extracciones VE</button></a>
-      <a href="suministros.html"><button class="boton-transparente boton-gris">Suministros UV</button></a>
-    </div>
+    <a href="tanque_pulmon.html"><button class="boton-transparente boton-gris tanque_pulmon">Tanque<br> 
+      pulmon</button></a>
+    <a href="compresores.html"><button class="boton-transparente boton-gris compresores">Compresores</button></a>
+    <a href="aquamat.html"><button class="boton-transparente boton-gris aquamat">Aquamat</button></a>
+    <a href="calderas.html"><button class="boton-transparente boton-gris calderas">Calderas</button></a>
+    <a href="chiller.html"><button class="boton-transparente boton-gris chiller">Chiller<br>YORK</button></a>
+
+
+    <a href="extracciones.html"><button class="boton-transparente boton-gris extracciones">Extracciones VE</button></a>
+    <a href="suministros.html"><button class="boton-transparente boton-gris suministros">Suministros UV</button></a>
   </div>
 
   <div class="button-container">
