@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <title>Área Técnica</title>
+  <title>Area tecnica</title>
   <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/Baron-Robotics212/prueba/main/YANBAL%20LOGO.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
@@ -35,26 +35,21 @@
       margin-top: 20px;
       width: 80%;
       max-width: 500px;
-      overflow: hidden;
-      color: black;
-    }
-
-    .envoltorio-imagen {
       border-radius: 20px;
       padding: 6px;
       background: linear-gradient(270deg, #00cfff, #7fffd4, #00cfff);
       background-size: 600% 600%;
       animation: gradienteAnim 8s ease infinite;
       box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      color: black;
     }
 
-    .envoltorio-imagen img {
+    .imagen-con-boton img {
       display: block;
       width: 100%;
       height: auto;
       border-radius: 14px;
-      background-color: #111822;
-      opacity: 0.6;
     }
 
     @keyframes gradienteAnim {
@@ -65,7 +60,7 @@
 
     .titulo-zona {
       position: absolute;
-      top: 50%;
+      top: 50%; /* Subido para no chocar con botón */
       left: 35%;
       transform: translateX(-50%);
       font-size: 2em;
@@ -109,13 +104,16 @@
     }
 
     /* Posiciones relativas usando porcentaje */
-    .tanque_pulmon { top: 2%; left: 0.1%; }
-    .compresores { top: 4%; left: 36%; }
+    .tanque_pulmon { top: 2%; left: 0.01%; }
+    .compresores { top: 4%; left: 36.5%; }
     .aquamat { top: 15%; left: 20%; }
     .calderas { top: 26%; left: 20%; }
     .chiller { top: 15%; left: 62.5%; }
+
     .extracciones { top: 40%; left: 36%; }
     .suministros  { top: 68%; left: 36%; }
+    .bomba  { top: 40%; left: 1%; }
+
 
     .button-container {
       width: 100%;
@@ -161,7 +159,7 @@
 
     @media (max-width: 600px) {
       .imagen-con-boton {
-        width: 98%;
+        width: 98%; /* Expandir imagen un poco más en móviles */
       }
 
       .boton-transparente {
@@ -171,7 +169,7 @@
 
       .titulo-zona {
         font-size: 1.6em;
-        top: 50%;
+        top: 50%; /* Asegurarse que no se empalme en móviles */
         left: 35%;
       }
 
@@ -187,18 +185,19 @@
 
   <div class="imagen-con-boton">
     <p class="titulo-zona">Area Tecnica</p>
+    <img src="plano-area-tecnica.png" alt="Plano Zona Negra" />
 
-    <div class="envoltorio-imagen">
-      <img src="plano-area-tecnica.png" alt="Plano Zona Negra" />
-    </div>
-
-    <a href="tanque_pulmon.html"><button class="boton-transparente boton-gris tanque_pulmon">Tanque<br>pulmon</button></a>
+    <a href="tanque_pulmon.html"><button class="boton-transparente boton-gris tanque_pulmon">Tanque<br> 
+      pulmon</button></a>
     <a href="compresores.html"><button class="boton-transparente boton-gris compresores">Compresores</button></a>
     <a href="aquamat.html"><button class="boton-transparente boton-gris aquamat">Aquamat</button></a>
     <a href="calderas.html"><button class="boton-transparente boton-gris calderas">Calderas</button></a>
     <a href="chiller.html"><button class="boton-transparente boton-gris chiller">Chiller<br>YORK</button></a>
+
+
     <a href="extracciones.html"><button class="boton-transparente boton-gris extracciones">Extracciones VE</button></a>
     <a href="suministros.html"><button class="boton-transparente boton-gris suministros">Suministros UV</button></a>
+    <a href="bomba.html"><button class="boton-transparente boton-gris bomba">Bomba<br>GROUNDFUS</button></a>
   </div>
 
   <div class="button-container">
